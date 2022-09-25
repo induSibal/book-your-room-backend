@@ -5,7 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var getUsersRouter = require('./routes/getUsers');
+var getRoomsRouter = require('./routes/getRooms');
+var updateRoomsRouter = require('./routes/updateRooms');
+
+//const sql = require('mssql/msnodesqlv8');
 
 var app = express();
 
@@ -19,8 +23,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', indexRouter)
+app.use('/getUsers', getUsersRouter);
+app.use('/getRooms', getRoomsRouter);
+app.use('/updateRooms', updateRoomsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
