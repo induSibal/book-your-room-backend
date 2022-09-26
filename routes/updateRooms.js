@@ -8,7 +8,7 @@ router.get('/', (req,res)=>{
   var query = "SELECT * FROM rooms";
   request.query(query, function (err, result, fields) {    
     if (err) throw err;
-    console.log(result.recordSet);
+    console.log(err);
   res.json(result.recordsets[0]);
   });
 });
