@@ -19,4 +19,5 @@ sql.connect(config, (err) => {
     console.log("DB connected")
   }
 });
+
 module.exports = sql;

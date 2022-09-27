@@ -7,9 +7,13 @@ var cors = require('cors') ;
 
 var indexRouter = require('./routes/index');
 var getUsersRouter = require('./routes/getUsers');
-var getRoomsRouter = require('./routes/getRooms');
+var getAvailableRoomsRouter = require('./routes/getAvailableRooms');
 var updateRoomsRouter = require('./routes/updateRooms');
 var updateUsersRouter = require('./routes/updateUsers');
+var validateUserRouter=require('./routes/validateUser');
+var userBookingRouter= require('./routes/userBooking');
+var getAllBookingsRouter= require('./routes/getAllBookings');
+var deleteBookingRouter= require('./routes/deleteBooking');
 
 
 
@@ -43,9 +47,14 @@ app.use(cors(corsOptions));
 
 app.use('/', indexRouter)
 app.use('/getUsers', getUsersRouter);
-app.use('/getRooms', getRoomsRouter);
+app.use('/getAvailableRooms', getAvailableRoomsRouter);
 app.use('/updateRooms', updateRoomsRouter);
 app.use('/updateUsers', updateUsersRouter);
+app.use('/validateUser', validateUserRouter);
+app.use('/userBooking', userBookingRouter);
+app.use('/getAllBookings', getAllBookingsRouter);
+app.use('/deleteBooking', deleteBookingRouter);
+
 
 
 app.use(cors(corsOptions));
