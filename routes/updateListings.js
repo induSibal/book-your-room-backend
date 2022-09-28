@@ -5,7 +5,7 @@ var sql = require('../Service/dbConfig');
 /* GET users listing. */
 router.get('/', (req,res)=>{
   var request = new sql.Request();
-  var query = "SELECT * FROM rooms";
+  var query = "SELECT * FROM listings";
   request.query(query, function (err, result, fields) {    
     if (err) throw err;
     console.log(err);
