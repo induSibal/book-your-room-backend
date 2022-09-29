@@ -14,6 +14,7 @@ var validateUserRouter=require('./routes/validateUser');
 var userBookingRouter= require('./routes/userBooking');
 var getAllBookingsRouter= require('./routes/getAllBookings');
 var deleteBookingRouter= require('./routes/deleteBooking');
+var viewAllListingsRouter= require('./routes/getAllListings');
 
 
 
@@ -54,6 +55,7 @@ app.use('/validateUser', validateUserRouter);
 app.use('/userBooking', userBookingRouter);
 app.use('/getAllBookings', getAllBookingsRouter);
 app.use('/deleteBooking', deleteBookingRouter);
+app.use('/viewAllListings', viewAllListingsRouter);
 
 
 
